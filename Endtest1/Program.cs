@@ -11,17 +11,14 @@ GenerationRandomStringArray(LengthRandomArray, out string[] RandomStringArray);
 
 string[] SortedStringArray = new string[0];
 int j = 0;
-int CounterSorted = 0;
 for (int i = 0; i < LengthRandomArray; i++)
 {
     if (RandomStringArray[i].Length <= A)
     {
         Array.Resize(ref SortedStringArray, SortedStringArray.Length + 1);
         SortedStringArray[j] = RandomStringArray[i];
-        CounterSorted++;
         j++;
     }
-
 }
 
 if (SortedStringArray.Length == 0)
@@ -34,12 +31,10 @@ else
 {
     Console.WriteLine($"Создан массив из {LengthRandomArray} элементов:");
     Console.WriteLine($"{String.Join("  ", RandomStringArray)}");
-    Console.WriteLine($"Массив содержит {CounterSorted} элементов, длина которых меньше или равна {A}");
+    Console.WriteLine($"Массив содержит {SortedStringArray.Length} элементов, длина которых меньше или равна {A}");
     Console.WriteLine("Это элементы:");
     Console.WriteLine(String.Join("  ", SortedStringArray));
 }
-
-
 
 void NumberFromString(out double number)
 {
